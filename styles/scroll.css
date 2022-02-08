@@ -1,0 +1,26 @@
+
+  
+  .cf:before,
+  .cf:after {
+      content: " "; /* 1 */
+      display: table; /* 2 */
+  }
+  
+  .cf:after {
+      clear: both;
+  }
+  .cf {
+      *zoom: 1;
+  }
+  .wrapper {
+    width: 50%;
+  
+    margin-top: 60px;
+    margin-bottom: 200px;
+  }
+  .content {
+    
+    width: 100px;
+  }
+  
+  
