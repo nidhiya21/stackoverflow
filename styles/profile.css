@@ -11,22 +11,20 @@ font-family: "Segoe UI","Liberation Sans",sans-serif;;
 .item2 { grid-area: menu; }
 .main-content { grid-area: main; }
 .item5 { grid-area: footer; }
-
 .grid-container {
 display: grid;
 grid-template-areas:
 'header header header header header header'
 'menu main main main main main'
 'footer footer footer footer footer footer';
-/* grid-gap: 10px;  */
 }  
 .main-content{
 /* height:800px; */
+/* height: auto;  
+overflow: auto;  */
 }
 .grid-container > div {
-
 padding: 0 16px;
-
 } 
 .header{
 background-color: hsl(210,8%,97.5%)!important;
@@ -36,6 +34,9 @@ justify-content: space-between;
 align-items: center;
 border-top: 3px solid hsl(27,90%,55%);
 border-bottom: solid 0.5px #EAEAEC;
+position: -webkit-sticky;
+position: sticky;
+top: 0;
 
 }
 .logo-block{
@@ -87,15 +88,12 @@ background-color: hsl(206deg 97% 41%);
 margin-right: 40px;
 width: 24px;
 height: 24px; 
-/* padding: 50px;
-margin: 20px; */
 text-align:center;
 color:white;
 padding-top: 1px;
 margin-left: 16px;
 }
 .message-count{ 
-
 font-weight: bold;
 color: grey;
 margin-left: -29px;
@@ -120,6 +118,9 @@ border-right: solid 0.5px #EAEAEC!important;
 width: 100%; 
 margin: 16px;
 margin-top: 0px;
+position: -webkit-sticky;
+position: sticky;
+right: 0;
 }
 .left-link a{
 text-decoration: none;
@@ -137,40 +138,13 @@ padding: 4px;
 color: gray;
 line-height: 3; 
 font-size: 13px;
-
 }
-/* #container::-webkit-scrollbar {
-background: lightyellow;
-width: 12px;
-}
-#container::-webkit-scrollbar-track {
--webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-border-radius: 10px;
-}
-#container::-webkit-scrollbar-thumb {
-border-radius: 10px;
--webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
-}
-div.foo {
-height: 300px;
-border: 1px solid gray;
-overflow: auto;
-}
-#container:hover::-webkit-scrollbar {
-background: yellow;
-}
-div.foo > div {
-height: 1000px;
-} */
 .questions{
 justify-content: center;
 display: flex;
 align-items: center;
 margin-top: -18px;
 margin-left: -20px
-}
-.sub-question{
-/* padding-left: 49px; */
 }
 .sub-question a{
 color:gray;
@@ -269,7 +243,6 @@ margin-right: 60px;
 text-decoration: none;
 font-size: 12px;
 margin-left: 13px;
-
 }
 .edit-profile{
 border: 1px solid hsl(210,8%,65%);
@@ -278,10 +251,10 @@ border-color: hsl(210,8%,65%);
 margin-right: 11px;
 display: flex;
 align-items: center;
-
 width: max-content;
 padding: 0px 10px 2px 10px;
 font-size: 13px;
+cursor:pointer;
 }
 .network-profile{
 border: 1px solid hsl(210,8%,65%);
@@ -293,6 +266,7 @@ align-items: center;
 width: max-content;
 padding: 0px 10px 2px 10px;
 font-size: 13px;
+cursor:pointer;
 }
 .pfl{
 margin-top:3px;
@@ -326,7 +300,6 @@ align-items: center;
 justify-content: left;
 margin-left: 16px;
 margin-top: 51px;
-
 }
 .activity{
 background-color:hsl(27,90%,50%);
@@ -355,7 +328,6 @@ line-height: 2;
 font-size: 13px;
 color: gray;
 }
-
 .summary-menu a:hover{
 background-color: hsl(210deg 7% 89%);
 color: black;
@@ -392,7 +364,6 @@ width: 367px;
 height: 283px;
 text-align: center;
 border-radius: 6px;
-
 } 
 .top-cards-middle{
 border: 1px solid hsl(210deg 6% 85%);
@@ -402,8 +373,6 @@ width: 310px;
 height: 283px;
 text-align: center;
 border-radius: 6px;
-
-
 } 
 .top-cards-right{
 border: 1px solid hsl(210deg 6% 85%);
@@ -414,7 +383,6 @@ height: 283px;
 text-align: center;
 border-radius: 6px;
 margin-right: 43px;
-
 } 
 .top-cards{
 display:flex;
@@ -495,7 +463,6 @@ margin-right: 38px;
 padding-left: 126px;
 padding-top: 22px;
 padding-bottom: 30px;
-/* padding-right: 144px; */
 margin-top: -33px;
 margin-left: 14px;
 }
@@ -551,7 +518,6 @@ margin-top: -33px;
 {
 padding-top: 51px;
 width: 39%;
-/* margin-right: -42px; */
 margin-left: 46px;
 }
 .reputation-block{
@@ -834,6 +800,7 @@ margin-right: -2px;
 margin-left: 58px;
 margin-bottom: 38px;
 margin-top: 243px;
+padding-right: 64px;
 }
 .bottom-link a{
 color: hsl(210deg 8% 56%);
@@ -866,7 +833,6 @@ width: 100%;
 margin-top: 60px;
 margin-bottom: 200px;
 }
-
 .editsvg{
 margin-top: 9px;
 }
@@ -888,3 +854,22 @@ padding-right: 26px;
 .snrev{
 padding-right: 317px;  
 }
+html {
+    box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+.cf:before,
+.cf:after {
+content: " "; 
+display: table; 
+}
+
+.cf:after {
+clear: both;
+}
+
+.cf {
+*zoom: 1;
+} 
